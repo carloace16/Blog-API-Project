@@ -78,5 +78,5 @@ app.get("/api/posts/delete/:id", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Backend server is running on http://localhost:${port}`);
+  console.log(`Go to http://localhost:${port} to check`);
 });
