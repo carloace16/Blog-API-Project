@@ -11,6 +11,8 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+//THE SERVER.JS IS WHAT YOU WROTE IF YOU'RE A USER AND TRYING TO USE THIS API. GETS?
+
 // Route to render the main page
 app.get("/", async (req, res) => {
   try {

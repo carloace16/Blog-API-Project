@@ -40,6 +40,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Write your code here//
 
+//THIS INDEX.JS IS THE API WE CREATED. IMAGINE THIS IS THE API THAT OTHER PEOPLE MIGHT BE ABLE TO USE. THIS IS HOW WE DO IT.
+//THE SERVER.JS IS WHAT YOU WROTE IF YOU'RE A USER AND TRYING TO USE THIS API. GETS?
+
 //CHALLENGE 1: GET All posts
 app.get("/posts", (req, res) => {
   console.log(posts);
@@ -63,7 +66,7 @@ app.post("/posts", (req, res) => {
   const newId = (lastId += 1);
   const post = {
     id: newId,
-    title: req.body.title,
+    title: req.body.title, //req.body.title is from modify.ejs name. Same with below with .content and .author. We getting what the user type so we can add it using post request
     content: req.body.content,
     author: req.body.author,
     date: new Date(),
