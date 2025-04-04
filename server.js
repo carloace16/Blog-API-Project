@@ -26,7 +26,7 @@ app.get("/", async (req, res) => {
 
 // Route to render the edit page
 app.get("/new", (req, res) => {
-  res.render("modify.ejs", { heading: "New Post", submit: "Create Post" });
+  res.render("modify.ejs", { heading: "New Post", submit: "Create Post" }); //heading and submit are the name of the variables in modify.ejs. "New Post" is the value of heading and "Create Post" is the value of submit. This is how we pass data to the ejs file.
 });
 
 app.get("/edit/:id", async (req, res) => {

@@ -51,8 +51,8 @@ app.get("/posts", (req, res) => {
 
 //CHALLENGE 2: GET a specific post by id
 app.get("/posts/:id", (req, res) => {
-  const postId = Number(req.params.id);
-  const post = posts.find((p) => p.id === postId);
+  const postId = Number(req.params.id); //req.params.id is a string, so we convert it to a number. Number() is a built-in function in JavaScript that converts a string to a number.
+  const post = posts.find((p) => p.id === postId); ///=== is a strict equality operator that checks both value and type. So, if postId is a number and p.id is a string, it will return false.
 
   if (post) {
     res.json(post);
@@ -78,7 +78,8 @@ app.post("/posts", (req, res) => {
 
 //CHALLENGE 4: PATCH a post when you just want to update one parameter
 app.patch("/posts/:id", (req, res) => {
-  const post = posts.find((p) => p.id === parseInt(req.params.id)); //find helps retrieve the object to update it directly in memory (for PATCH).
+  const postId = Number(req.params.id);
+  const post = posts.find((p) => p.id === postId); //find helps retrieve the object to update it directly in memory (for PATCH).
   if (!post) return res.status(404).json({ message: "Post not found" });
 
   if (req.body.title) post.title = req.body.title;
